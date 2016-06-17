@@ -5,15 +5,15 @@ import java.util.Arrays;
 import java.util.List;
 
 public class PairNameCreator {
-    final static byte NOTATION = 35;                 //9 - Arabic numerals + 26 - Latin characters
-    final static byte ASCII_CODE_FIGURE_ONE = 49;    //49 - ASCII code of capital '1'
-    final static byte ASCII_CODE_A = 65;             //65 - ASCII code of capital 'A'
+    private final static byte NOTATION = 35;                 //9 - Arabic numerals + 26 - Latin characters
+    private final static byte ASCII_CODE_FIGURE_ONE = 49;    //49 - ASCII code of capital '1'
+    private final static byte ASCII_CODE_A = 65;             //65 - ASCII code of capital 'A'
 
-    private final static char[] alphabet = new char[NOTATION];
     /*{'1', '2', '3', '4', '5', '6', '7', '8', '9',
        'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
        'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'}*/
     private final static List<Long> pawsNotation = new ArrayList<Long>();
+    private final static char[] alphabet = new char[NOTATION];
 
     public PairNameCreator() {
         fillPawsNotation(Long.MAX_VALUE);
@@ -55,7 +55,7 @@ public class PairNameCreator {
         return pairName;
     }
 
-    public void fillPawsNotation(long decNumber) {
+    private void fillPawsNotation(long decNumber) {
         pawsNotation.add((long) 1);
         pawsNotation.add((long) NOTATION);
 
@@ -66,7 +66,7 @@ public class PairNameCreator {
         }
     }
 
-    public void fillAlphabet() {
+    private void fillAlphabet() {
         byte asciiCharCode = ASCII_CODE_FIGURE_ONE;
         for (int i = 0; i < NOTATION; i++) {
             if (i <= 8) {
