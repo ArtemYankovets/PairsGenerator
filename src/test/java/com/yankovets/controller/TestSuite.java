@@ -5,7 +5,8 @@ import org.junit.runners.Suite;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-        PairNameCreatorTest.class
+        PairNameCreatorTest.class,
+        CMDLineParserTest.class
 })
 public class TestSuite {
 }
